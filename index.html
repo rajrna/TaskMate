@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskMate</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+</head>
+<body class="background_color">
+  <header class="background_color">
+    <h2>TaskMate</h2> 
+    <div class="settings">
+      <a href=""><img class="settings header_buttons" src="svgs/settings-svgrepo-com.svg" alt=""></a>
+      <a href=""><img class="notifications header_buttons" src="svgs/notification-svgrepo-com.svg" alt=""></a>
+    </div>  
+  </header>
+
+  <main>
+    <div class="home_container section">
+      <div class="sidebar">
+        <div >
+            <a href=""><img src="svgs/user-svgrepo-com.png" class="profile_pic" alt=""></a>
+        </div>
+        <div>
+          <h1>EK</h1><br>
+          <h2>Streak :5D</h2>
+        </div>
+        
+        <div class="days">
+          <div class="my_day day_select">
+            <a href="">My Day</a>
+          </div>
+          <div class="tomorrow day_select">
+            <a href="">Tomorrow</a>
+          </div>
+          <div class="this_week day_select">
+            <a href="">This Week</a>
+          </div>
+          <div class="dropdown">
+            <button onclick="dropDown()" class="dropbtn">Lists</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Personal</a>
+              <a href="#">College</a>
+              <a href="#">Work</a>
+            </div>
+          </div>
+        </div>
+        <div class="my_lists day_select">
+          My Lists
+        </div>
+      </div>
+      
+      <br><br>
+      <div class="list_container section">
+        <div class="welcome_text">
+          <h1>Welcome, User</h1>
+          <h1 class="period">.</h1>
+          
+        </div>
+        
+              <div class="tasks_container input-container">
+                
+                  <form  id="form" onsubmit="addTodo()">
+      
+                      <input type="text" class="input" id="input" placeholder="Enter task">
+                    
+                    <ul class="todos" id="todos"></ul>
+                  </form>
+
+                  <!-- <ul id="taskList"></ul> -->
+                  <!-- <div class="task">
+                    <a href=""></a>
+                    <div class="round_checkbox"></div>
+                    <span class="task_name">Sleep</span>
+                  </div>
+                  <div class="task">
+                    <div class="round_checkbox"></div>
+                    <span class="task_name">Eat</span>
+                  </div>
+                  <div class="task">
+                    <div class="round_checkbox"></div>
+                    <span class="task_name">Gym</span>
+                  </div>
+                  <div class="task">
+                    <div class="round_checkbox"></div>
+                    <span class="task_name">Game</span>
+                  </div>
+                  <div class="task">
+                    <div class="round_checkbox"></div>
+                    <span class="task_name">Study</span>
+                  </div> -->
+                
+        </div>
+      </div>
+      <div class="right_container section">
+        <div class="task_status_container">
+          <div class="task_status">Tasks</div>
+          <div class="task_status">Incomplete</div>
+          <div class="task_status">Complete</div>
+        </div>
+        <div class="task_description">
+
+        </div>
+        <div class="footer">
+          <a href="">Blog</a>
+          <a href="">Privacy</a>
+          <a href="">Contact us</a>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+
+  <!-- <footer class="background_color">
+    <p>TaskMate development</p>
+  </footer> -->
+</body>
+</html>
