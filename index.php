@@ -1,3 +1,34 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "taskmate";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+  // Retrieve form data
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  $task_name = mysqli_real_escape_string($conn, $_POST['task_name']);
+  $description = mysqli_real_escape_string($conn, $_POST['description']);
+
+
+  $add_task = "INSERT INTO tasks (task_name,description)VALUES ('$task_name','$description')";
+  if ($conn->query($add_task) === true) {
+    echo "Data stored successfully!";
+} else {
+    echo "Error storing data: " . $conn->error;
+}
+
+};
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,13 +92,25 @@
         </div>
         
               <div class="tasks_container input-container">
-                
-                  <form  id="form" onsubmit="addTodo()">
-      
-                      <input type="text" class="input" id="input" placeholder="Enter task">
-                    
-                    <ul class="todos" id="todos"></ul>
-                  </form>
+                <div>
+
+                </div>
+                <button class="add_task_button" onclick="openForm()">Add Task</button>
+
+                <div id="myModal" class="modal">
+                  <div class="task_form">
+                    <span onclick="closeForm()" style="float: right; cursor: pointer; color: #001233;">&times;</span>
+                    <h2>Task</h2>
+                    <form action="" method="post">
+                      <label for="task_name" class="form_label">Task Name:</label>
+                      <input type="text" id="task_name" name="task_name" required><br><br>
+                      <label for="description" class="form_label">Description</label>
+                      <input type="textarea" id="description" name="description"><br><br>
+                      <input type="submit" value="Add Task" class="add_task_submit">
+                    </form>
+                  </div>
+                </div>
+              
 
                   <!-- <ul id="taskList"></ul> -->
                   <!-- <div class="task">

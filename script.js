@@ -72,4 +72,14 @@ function dropDown() {
   //   e.preventDefault();
   //   // addTodo();
   // });
+
+  //..............................Task create button script..........................................
   
+  function openForm() {
+    document.getElementById("myModal").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("myModal").style.display = "none";
+  }
+  // ..............................................................................................

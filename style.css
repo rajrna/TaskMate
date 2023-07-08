@@ -7,7 +7,17 @@
 }
 * {
   box-sizing: border-box;
+  /* background-color: #001233; */
+  color: var(--orange);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/* ----------------------------------------Header CSS------------------------- */
+header{
+  color: var(--orange);
+}
+
+/* =--------------------------------------------------- */
 body {
   /* display: flex;
   flex-direction: column; */
@@ -17,10 +27,6 @@ body {
   margin: 0;
 }
 
-.all{
-  background-color: black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
 
 /* Login page css */
 
@@ -41,7 +47,7 @@ body {
   position: relative;
 }
 /*login page css starts here*/
-.logo{
+/* .logo{
     width: 15em;
     height: 15em;
     display: flex;
@@ -61,9 +67,9 @@ body {
   width: 50em;
   margin: auto;
   font-size: 30x;
-}
+} */
 /* Login input css starts here */
-input{
+/* input{
   position: relative;
   padding: 10px;
   width: 20em;
@@ -111,6 +117,7 @@ input[type=checkbox]{
   top: 10em;
   text-decoration: none;
 }
+
 /* Login input css ends here */
 #sub{
   margin-left: 8em;
@@ -125,7 +132,7 @@ a:hover{
 }
 a:after{
   color: red;
-}
+} */
 
 
 /* Homepage css starts here */
@@ -183,7 +190,10 @@ main {
 .welcome_text{
   position: relative;
   display: inline-flex;
+  width: 100%;
+  height: 5em;
 }
+
 .inline_class{
 display: inline;
 }
@@ -234,12 +244,7 @@ background-color: #FD4F00;
   color: #EFE0CA;
 }
 
-.welcome_text{
-  display: flex;
-  width: 100%;
-  height: 10em;
-  
-}
+
 .period{
   color: #FD4F00;
 }
@@ -269,7 +274,41 @@ background-color: #FD4F00;
 }
 .task_input{
   display: flex;
+} 
+.add_task_button{
+  width: 10em;
+  height: 3em;
+  background: var(--orange);
+  color: var(--dark-blue);
 }
+/* Styling for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 5em;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Styling for the form within the modal */
+.task_form {
+  background-color: var(--orange);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--dark-blue);
+  width: 50em;
+  height: 25em;
+}
+
+.task_form h2{
+  color: var(--dark-blue);
+  text-align: center;
+}
+
 .task_input button{
   padding: 10px 20px;
   background-color: var(--orange);
@@ -283,12 +322,39 @@ background-color: #FD4F00;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-form {
-  box-shadow: 0 10px 10px rgba(26, 2, 2, 0.1);
-
-  max-width: 100%;
-  width: 500px;
+.form_label{
+  font-size: large;
+  background-color:var(--orange) ;
+  color: var(--dark-blue);
 }
+input[type=text]{
+  width: 100%;
+  height: 5em;
+  background-color: #EFE0CA;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  border: #333 1px;
+  background-size: 20px;
+  background-image: url('svgs/notebook-svgrepo-com.png');
+  box-sizing: border-box;
+}
+input[type=textarea]{
+  width: 100%;
+  height: 10em;
+  text-align: justify;
+  background-color: var(--beige);
+}
+input[type=submit]{
+  background-color: var(--dark-blue);
+  width: 6em;
+}
+.add_task_submit{
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
 .todos{
   width: auto;
   margin: auto;
@@ -303,22 +369,6 @@ form {
 .todos li.completed {
   color: #b6b6b6;
   text-decoration: line-through;
-}
-
-input[type=text]{
-  width: 30%;
-  height: 3em;
-  position: fixed;
-  background-color: #EFE0CA;
-  color: #001233;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding-left: 30px;
-  border: #333 1px;
-  border-radius: 4px;
-  background-size: 20px;
-  background-image: url('svgs/notebook-svgrepo-com.png');
-  box-sizing: border-box;
 }
 
 
@@ -348,6 +398,7 @@ input[type=text]{
   display: none;
   position: absolute;
   background-color: var(--beige);
+  color: var(--orange);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -426,7 +477,32 @@ input[type=text]{
 
 /* Right container end */
 
-/* Scrollbar */
+
+/* ---------------------Profile page css--------------------- */
+  
+.profile_container{
+  display: flex;
+}
+  .profile_pic_container{
+    width: 25em;
+    height: 25em;
+    background-color: #1e90ff;
+  }
+  .profile_pic_main{
+      height: 25em;
+      width: 25em;
+      border-radius: 50%;
+    }
+  .profile_record{
+    margin: auto;
+    position: relative;
+  }
+/* =-=---------------------------------------------------------------- */
+
+
+
+
+/*---------------------------------------------- Scrollbar */
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -446,4 +522,4 @@ input[type=text]{
 ::-webkit-scrollbar-thumb:hover {
   background: #EFE0CA;
 }
-/* Scrollbar end */
+/* ----------------------------------------------Scrollbar end */
