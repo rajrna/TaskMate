@@ -54,13 +54,6 @@ body {
     margin: auto;
     top: 1.5em;
 }
-
-.forms{
-  margin: auto;
-  width: 50em;
-  height: 35em;
-
-}
 .login_form{
   top: 50px;
   color: #fff;
@@ -82,14 +75,7 @@ body {
   left: 19.5em;
 }
 
-input[type=submit] {
- font-family: 'Teko', sans-serif;
- margin: auto;
- position: relative;
- background-color: #333;
- border: solid black 1px;
 
-}
 input[type=checkbox]{
   left: 3em;
   color: azure;
@@ -98,24 +84,6 @@ input[type=checkbox]{
   display: inline-flex;
   left: 10em;
 
-}
-.forgot_password{
-  left: 4em;
-  bottom: 1px;
-}
-.remember_me{
-  left: 18em;
-  display: inline-flex;
-  bottom: 1px;
-}
-
-.btns{
-  left: 17em;
-  display:inline-flex;
-  background-color:#333;
-  color: white;
-  top: 10em;
-  text-decoration: none;
 }
 
 /* Login input css ends here */
@@ -249,18 +217,12 @@ background-color: #FD4F00;
   color: #FD4F00;
 }
 /* Tasks css */
-.tasks_container{
-  width: 70%;
-  height: 300px;
-  display: flex;
-  overflow:auto;
-}
 .tasks{
   padding: 10px;
   width: 100%;
 }
 .task{
-  width: 95%;
+  width: 20em;
   height: 4em;
   border-radius: 4px;
   background-color: var(--orange);
@@ -271,6 +233,12 @@ background-color: #FD4F00;
 }
 .task:hover{
   border: #fff solid 1px;
+}
+
+.task_container{
+  overflow: auto;
+  height: 50rem;
+
 }
 .task_input{
   display: flex;

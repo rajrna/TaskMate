@@ -83,3 +83,15 @@ function dropDown() {
     document.getElementById("myModal").style.display = "none";
   }
   // ..............................................................................................
+
+  // .............................Task Update
+
+  function openUpdateForm(){
+    document.getElementById("updateForm").style.display = "block";
+  }
+  function closeUpdateForm() {
+    document.getElementById("updateForm").style.display = "none";
+  }
+  // .
+
+  
