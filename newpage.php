@@ -24,7 +24,7 @@ include 'add_task.php' ;
     <script src="script.js"></script> 
 </head>
 <body>
-    <header>
+    <header class="patterned-div">
         <h2><a href="index.html">TaskMate</a></h2> 
         <div class="settings">
             <a href=""><img class="settings header_buttons" src="svgs/settings-svgrepo-com.svg" alt=""></a>
@@ -40,13 +40,13 @@ include 'add_task.php' ;
                     <h2>EK</h2>
                 </div>
                 <div class="days">
-                    <div class="my_day day_select display_inline" onfocus="changeColor()">
+                    <div class="my_day day_select display_inline"  onclick="selectMyDay()">
                       <a href="">My Day</a>
                     </div>
-                    <div class="tomorrow day_select display_inline">
+                    <div class="tomorrow day_select display_inline" onclick="selectTomorrow()">
                       <a href="">Tomorrow</a>
                     </div>
-                    <div class="this_week day_select display_inline">
+                    <div class="this_week day_select display_inline"  onclick="selectThisWeek()">
                       <a href="">This Week</a>
                     </div>
                     <div class="dropdown">
@@ -85,14 +85,15 @@ include 'add_task.php' ;
                         </div>
                     </div>
                 </div>
-                <div class="task_container">
+                <div class="task_container" id="myDayContainer" >
+                
                     <?php include 'show_task.php' ; ?>
 
                     <div id="updateForm" class="modal">
                         <div class="task_form">
                             <span onclick="closeUpdateForm()" style="float: right; cursor: pointer; color: #001233;">&times;</span>
                             <h2>Task</h2>
-                            <form action="update_task.php" method="post">
+                            <form action="" method="post">
                                 <label for="task_name" class="form_label">Task Name:</label>
                                 <input type="text" id="task_name" name="task_name" required><br><br>
                                 <label for="description" class="form_label">Description</label>
@@ -103,13 +104,25 @@ include 'add_task.php' ;
                         
                     </div>
                 </div>
+
+                <div class="task_container" id="tomorrowContainer">
+
+                </div>
+                
+                <div class="task_container" id="thisWeekContainer">
+
+                </div>
+
             </div>
             
             <div class="right_container section">
                 <div class="task_status_container">
-                    <div class="task_status">Tasks :0</div>
-                    <div class="task_status">Incomplete :0</div>
-                    <div class="task_status">Complete :0</div>
+                    <div class="task_status">Tasks :<?php include 'NoOfTask.php'; echo $totalTasks; ?></div>
+                    <div class="task_status">Incomplete :<?php include 'NotCompletedTask.php'; echo $incompleteTasks; ?></div>
+                    <div class="task_status">Complete :<?php include 'CompletedTask.php'; echo $completeTasks; ?></div>
+                </div>
+                <div class="productivity">
+                    <h3>Your productivity</h3>
                 </div>
 
                 <div class="footer">

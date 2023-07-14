@@ -15,6 +15,8 @@
         echo '<div class="task" onclick="openUpdateForm()">';
         echo 'Task: ' . $row["task_name"] . '<br>';
         echo 'Description: ' . $row["description"] . '<br>';
+        echo ' <input type="checkbox" id="taskComplete">';
+        echo '<label for="taskComplete">Complete</label>';
         echo '</div>';
         }
                         

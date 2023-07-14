@@ -20,59 +20,7 @@ function dropDown() {
   }
 
 
-  // Task input script
-
-  const form = document.getElementById("form");
-  const input = document.getElementById("input");
-  const todosList = document.getElementById("todos");
-  const todos = JSON.parse(localStorage.getItem("todos"));
   
-  const updateLocalStorage = () => {
-    const todosElements = document.querySelectorAll("li");
-    const todos = [];
-    todosElements.forEach((todoElement) => {
-      todos.push({
-        text: todoElement.innerText,
-        completed: todoElement.classList.contains("completed"),
-      });
-    });
-    localStorage.setItem("todos", JSON.stringify(todos));
-  };
-  
-  const addTodo = (todo) => {
-    let todoText = input.value;
-    if (todo) todoText = todo.text;
-    if (todoText) {
-      const todoElement = document.createElement("li");
-      if (todo && todo.completed) {
-        todoElement.classList.add("completed");
-      }
-      todoElement.innerText = todoText;
-      todoElement.addEventListener("click", () => {
-        todoElement.classList.toggle("completed");
-        updateLocalStorage();
-      });
-      todoElement.addEventListener("contextmenu", (e) => {
-        e.preventDefault();
-        todoElement.remove();
-        updateLocalStorage();
-      });
-      todosList.appendChild(todoElement);
-      input.value = "";
-      updateLocalStorage();
-    }
-    e.preventDefault();
-  };
-  
-  if (todos) {
-    todos.forEach((todo) => addTodo(todo));
-  }
-  
-  // form.addEventListener("submit", (e) => {
-  //   e.preventDefault();
-  //   // addTodo();
-  // });
-
   //..............................Task create button script..........................................
   
   function openForm() {
@@ -95,3 +43,21 @@ function dropDown() {
   // .
 
   
+// ...........................Select My Day 
+  function selectMyDay(){
+    document.getElementsById("myDayContainer").style.display = "block";
+    document.getElementsById("tomorrowContainer").style.display = "none";
+    document.getElementsById("thisWeekContainer").style.display = "none";
+  }
+
+  function selectTomorrow(){
+    document.getElementsById("myDayContainer").style.zIndex= '-1';
+    document.getElementsById("tomorrowContainer").style.zIndex = '0';
+    document.getElementsById("thisWeekContainer").style.zIndex = '0';
+  }
+
+  function selectThisWeek(){
+    document.getElementsById("myDayContainer").style.display = "none";
+    document.getElementsById("tomorrowContainer").style.display = "none";
+    document.getElementsById("thisWeekContainer").style.display = "block";
+  }
