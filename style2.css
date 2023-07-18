@@ -300,8 +300,8 @@ input[type=submit]{
     height: 50vh;
 }
 .task{
-    width: 90%;
-    height: 4em;
+    width: 95%;
+    height: 5em;
     border-radius: 4px;
     background-color: var(--primary-color);
     display: flex;
@@ -311,6 +311,12 @@ input[type=submit]{
 }
 .task:hover{
     border: #fff solid 1px;
+}
+.task_desc_short h5{
+    margin: 0;
+}
+h5{
+    margin:5px ,0,0,0;
 }
 .indivTask{
     width: 100%;

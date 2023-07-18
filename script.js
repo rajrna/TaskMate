@@ -87,7 +87,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-//  
+//  Form handling script
+document.getElementById("addTaskForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get the form data
+  const formData = new FormData(this);
+
+  // Perform the AJAX request
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "./addTasks/add_task.php", true);
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+              // Handle the response here if needed
+              console.log(xhr.responseText);
+
+              // Optionally, display a success message to the user
+              const successMessage = document.createElement("div");
+              successMessage.textContent = "Task added successfully!";
+              successMessage.style.color = "green";
+              document.body.appendChild(successMessage);
+
+              // Optionally, update the task list on the page without reloading
+              // For example, if you have a function to refresh the task list:
+              // refreshTaskList();
+          } else {
+              // Handle any errors that occurred during the request
+              console.error("Error: " + xhr.status);
+
+              // Optionally, display an error message to the user
+              const errorMessage = document.createElement("div");
+              errorMessage.textContent = "Failed to add task. Please try again later.";
+              errorMessage.style.color = "red";
+              document.body.appendChild(errorMessage);
+          }
+      }
+  };
+  xhr.send(formData);
+});
+
+
+
+
 
   // -----------------checkbox css-----------------
 
