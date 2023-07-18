@@ -1,3 +1,18 @@
+// Dark mode toggle
+const body = document.body;
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+  body.classList.toggle("dark-mode");
+}
+
+// You can call this function based on user interaction or system settings.
+// For example, if you have a dark mode toggle button:
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+darkModeToggle.addEventListener("click", toggleDarkMode);
+
+
+
 // Dropdown table
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -49,6 +64,9 @@ function dropDown() {
 
   function openUpdateForm(){
     document.getElementById("updateForm").style.display = "block";
+    document.getElementById('task_id').value = task_id;
+    document.getElementById('task_name').value = task_name;
+    document.getElementById('task_description').value = task_description;
   }
   function closeUpdateForm() {
     document.getElementById("updateForm").style.display = "none";
@@ -127,7 +145,46 @@ document.getElementById("addTaskForm").addEventListener("submit", function(event
   xhr.send(formData);
 });
 
+//Tomorrow form handling script
 
+document.getElementById("addTaskFormTomorrow").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get the form data
+  const formData = new FormData(this);
+
+  // Perform the AJAX request
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "./addTasks/addTomorrowTask.php", true);
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+              // Handle the response here if needed
+              console.log(xhr.responseText);
+
+              // Optionally, display a success message to the user
+              const successMessage = document.createElement("div");
+              successMessage.textContent = "Task added successfully!";
+              successMessage.style.color = "green";
+              document.body.appendChild(successMessage);
+
+              // Optionally, update the task list on the page without reloading
+              // For example, if you have a function to refresh the task list:
+              // refreshTaskList();
+          } else {
+              // Handle any errors that occurred during the request
+              console.error("Error: " + xhr.status);
+
+              // Optionally, display an error message to the user
+              const errorMessage = document.createElement("div");
+              errorMessage.textContent = "Failed to add task. Please try again later.";
+              errorMessage.style.color = "red";
+              document.body.appendChild(errorMessage);
+          }
+      }
+  };
+  xhr.send(formData);
+});
 
 
 

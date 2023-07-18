@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the query
     if (mysqli_query($conn, $sql)) {
-        echo "Data updated successfully.";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

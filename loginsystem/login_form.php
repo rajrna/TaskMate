@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
       } elseif ($row['user_type'] == 'user') {
           $_SESSION['user_type'] = 'user';
           $_SESSION['user_id'] = $row['id']; // Assuming 'id' is the unique identifier for the user in the database.
-          header('location: user_page.php');
+          header('location: ../index.php');
       }
   } else {
       $error[] = 'incorrect email or password!';
