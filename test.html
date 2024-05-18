@@ -1,47 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Todo List Website</title>
-  <style>
-    /* CSS styles for the header, main content, and footer */
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-
-    /* CSS styles for the todo list section */
-   
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Todo List Website</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <h2>Welcome to the Todo List Website!</h2>
-    
-  </main>
-
-  <footer>
-    <p>&copy; 2023 Todo List Website. All rights reserved.</p>
-  </footer>
+    <div class="weekTasks">
+        <div class="week sun">
+            <p class="weekName">Sunday</p>
+            <button class="add_task_button" onclick="openForm()">Add Task</button>
+        </div>
+        <div class="week mon">
+            <p class="weekName">Monday</p>
+            <button class="add_task_button" onclick="openForm()">Add Task</button>
+        </div>
+        <div class="week tue">
+            <p class="weekName">Tuesday</p>
+            <button class="add_task_button" onclick="openForm()">Add Task</button>
+        </div>
+        <div class="week wed">
+            <p class="weekName">Wednesday</p>
+            <button class="add_task_button" onclick="openForm()">Add Task</button>
+        </div>
+        <div class="week thurs">
+            <p class="weekName">Thursday</p>
+            <button class="add_task_button" onclick="openForm()">Add Task</button>
+        </div>
+        <div class="week fri">
+            <p class="weekName">Friday</p>
+            <button class="add_task_button" onclick="openForm()">Add Task</button>
+        </div>
+        <div class="week satur">
+            <p class="weekName">Saturday</p>
+            <button class="add_task_button" onclick="openForm()">Add Task</button>
+        </div>
+    </div>
 </body>
 </html>

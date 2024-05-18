@@ -25,7 +25,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
        // If the user is found in the database, retrieve their name
        $row = mysqli_fetch_assoc($result);
        $currentUserName = $row['name'];
-       echo "$currentUserName!";
+       echo "$currentUserName";
    } else {
        // If the user is not found in the database, handle the case accordingly
        echo "User not found!";
@@ -35,7 +35,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
    mysqli_close($conn);
 } else {
    // The user_id session variable is not set or empty, meaning the user is not logged in
-   echo "Welcome, Guest!";
+   echo "Welcome, Guest";
 }
 ?>
 

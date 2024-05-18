@@ -1,6 +1,4 @@
 <?php
-
-header("Refresh: 0; url=index.php");
 // Assuming you have a database connection established already
 $conn = mysqli_connect('localhost','root','','taskmate');
 
@@ -9,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $task_name = mysqli_real_escape_string($conn, $_POST['task_name']);
     $description = mysqli_real_escape_string($conn, $_POST['task_description']);
     // SQL query to update data in the table
-    $sql = "UPDATE todays_tasks SET task_name='$task_name', task_description='$description' WHERE task_id=$task_id";
+    $sql = "UPDATE tomorrows_tasks SET task_name='$task_name', task_description='$description' WHERE task_id=$task_id";
 
     // Execute the query
     if (mysqli_query($conn, $sql)) {

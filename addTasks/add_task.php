@@ -10,9 +10,10 @@
     header('Location: login_form.php');
     exit;
 }
+
   $conn = mysqli_connect('localhost','root','','taskmate');
  // Retrieve form data
-
+ 
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $task_id = mysqli_real_escape_string($conn, $_POST['task_id']);
     $task_name = mysqli_real_escape_string($conn, $_POST['task_name']);

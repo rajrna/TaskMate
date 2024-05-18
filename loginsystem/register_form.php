@@ -16,12 +16,12 @@ if(isset($_POST['submit'])){
 
    if(mysqli_num_rows($result) > 0){
 
-      $error[] = 'user already exist!';
+      $error[] = 'User already exist!';
 
    }else{
 
       if($pass != $cpass){
-         $error[] = 'password not matched!';
+         $error[] = 'Password not matched!';
       }else{
          $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
          mysqli_query($conn, $insert);
@@ -48,10 +48,10 @@ if(isset($_POST['submit'])){
 </head>
 <body>
    
-<div class="form-container">
+<div class="form-container pattern">
 
    <form action="" method="post">
-      <h3>register now</h3>
+      <h3>Register now</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -59,13 +59,13 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <input type="text" name="name" required placeholder="Enter your name">
+      <input type="text" name="name" required placeholder="Enter username">
       <input type="email" name="email" required placeholder="Enter your email">
       <input type="password" name="password" required placeholder="Enter your password">
       <input type="password" name="cpassword" required placeholder="Confirm your password">
       <select name="user_type">
          <option value="user">user</option>
-         <option value="admin">admin</option>
+         <!-- <option value="admin">admin</option> -->
       </select>
       <input type="submit" name="submit" value="Register now" class="form-btn">
       <p>Already have an account? <a href="login_form.php">Login now</a></p>

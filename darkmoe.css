@@ -6,7 +6,7 @@
     --blue: #1e90ff;
     --white: #ffffff;
     --primary-color:#F0F0F0 ;
-    --secondary-color:#E7473C ;
+    --secondary-color:#28282B ;
     --accent-color: #131b23;
     --primary-color-d:#070d10;
     --secondary-color-d:#ff0000;
@@ -18,5 +18,9 @@ body.dark-mode .dark-mode-div {
     color: var(--secondary-color-d);
   }
   
+body.dark-mode-div-alt{
+  background-color: var(--secondary-color-d);
+  color: var(--primary-color-d);
+}
 
   

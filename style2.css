@@ -9,43 +9,17 @@
     --gray:#1F1F1F;
     --mid-green:#0083FF;
     --dark-green:#183D3D;
-    --beige:#D5AA3F;
-    --whitish:#EBEBEB;
-    --redish:#ee5454;
   }
 *{
-    font-family: 'Coming Soon', cursive;
+    font-family: 'Play', sans-serif;
+    
     /* background-color: var(--main-background); */
 }
 body{
     font-size: 0;
     overflow: hidden;
-    width: 100vw;
-  height: 100vh;
-  
     background-color:var(--main-background);
-    background-color: #ccc;
-    opacity: 0.9;
-    background-size: 38px 38px;
-    background-image:  repeating-linear-gradient(0deg, #1e4562, #1e4562 1.9000000000000001px, #ccc 1.9000000000000001px, #ccc);
-}
-.comic_border{
-    border-width: 3px 4px 3px 5px;
-    border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-    transform: rotate(2deg);
-    border: solid 1px;
 }  
-.comic_border2{
-
-  border-width: 3px 3px 5px 5px;
-  border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-  transform: rotate(1deg);
-}
-.comic_border3{
-    border-width: 5px 3px 3px 5px;
-  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
-  transform: rotate(2deg);
-}
 .display_inline{
     display: inline;
 }
@@ -85,12 +59,12 @@ main{
     width: 18%;
     box-sizing: border-box;
     position: relative;
-    background-color: var(--beige);
+    background-color: var(--gray);
 }
 .center_container{
     background-color: var(--main-background);
     width: 55.5%;
-    bottom: 120px;
+    bottom: 96px;
     position: relative;
 }
 .right_container{
@@ -110,12 +84,6 @@ header {
     margin: 0;
     padding: 0;
     display: inline-block;
-    background-color: var(--redish);
-    border-width: 3px 4px 3px 5px;
-    border-radius: 100% 50% 92% 5%/8% 41% 6% 100%;
-    transform: rotate(0deg);
-    border: solid 1px;
-
 }
 header a{
     color: var(--white);
@@ -133,7 +101,7 @@ header h2{
     height: 2rem;
     position: relative;
     float: right;
-    bottom: 60px;
+    bottom: 56px;
     margin-right: 1em;
 }
 .settings_drop{
@@ -175,14 +143,11 @@ header h2{
     padding: 1em 3.5em 1em 3.5em;
     margin-bottom: 3px;
     color: var(--primary-color);
-    border: solid 1px ;
+    border: block 1px ;
     background-size: 1.5rem;
     background-position: 10px 10px;
     background-repeat: no-repeat;
     background-color: var(--gray);
-    border-width: 3px 4px 3px 5px;
-  border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-  transform: rotate(2deg);
     
 }
 .day_select_today{
@@ -216,16 +181,16 @@ header h2{
     background-color: #2C2C2C;
     /* border: #1e90ff solid 1px; */
     .day_selection_button{
-        color: var(--redish);
+        color: var(--mid-green);
         
         background-color: #2C2C2C;
     }    
 }
 .day_select.clicked{
     background-color: var(--gray);
-    border: var(--redish) solid 1px ;
+    border: #1e90ff solid 1px ;
     .day_selection_button{
-        color: var(--redish);
+        color: var(--mid-green);
         
         background-color: var(--gray);
     }    
@@ -325,22 +290,13 @@ header h2{
     display: inline-flex;
     width: 100%;
     height: 1em;
-    bottom: 60px;
-    left: 29px;
+    bottom: 65px;
     margin-left: 0.5em;
-    color: var(--beige);
+    color: var(--primary-color);
     font-size: 32px;
-}
-.j_welcome{
-    color: var(--main-background);
-    position: relative;
-    bottom: 5px;
 }
 .period{
     color: var(--mid-green);
-    position: relative;
-    bottom: 10px;
-    font-size: 32px;
 }
 
     /* -------------------Add Task------------------------------- */
@@ -354,9 +310,6 @@ header h2{
     border: none;
     position: relative;
     bottom: 55px;
-}
-.add_task_button:hover{
-    background-color: var(--redish);
 }
     /* Styling for the modal */
 .modal {
@@ -373,19 +326,13 @@ header h2{
     /* Styling for the form within the modal */
 
 .task_form{
-    background-color: var(--beige);
+    background-color: var(--mid-green);
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid var(--whitish);
+    border: 1px solid var(--background-color);
     width: 35em;
     height: 25em;
     bottom: 5em;
-    position: relative;
-}
-.task_form input{
-    border-width: 5px 3px 3px 5px;
-    border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
-    border: solid 1px var(--whitish);
 }
 .task_form h2{
     color: var(--background-color);
@@ -409,24 +356,23 @@ input{
 input[type=text]{
     width: 100%;
     height: 5em;
-    color: var(--redish);
-    background-color: var(--whitish);
+    background-color: var(--secondary-color);
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding-left: 30px;
     border: #333 1px;
     background-size: 20px;
+    background-image: url('svgs/notebook-svgrepo-com.png');
     box-sizing: border-box;
 }
 input[type=textarea]{
-    color: var(--redish);
     width: 100%;
     height: 5em;
     text-align: justify;
-    background-color: var(--whitish);
+    background-color: var(--secondary-color);
 }
 input[type=submit]{
-    background-color: var(--redish );
+    background-color: var(--background-color);
     width: 6em;
 }
 .add_task_submit{
@@ -441,8 +387,7 @@ input[type=submit]{
     position: absolute;
     bottom: 95px;
     width: 751px;
-    border-top: solid var(--redish);
-    background-color: var(--whitish);
+    border-top: solid white;
 }
 
  /* Target the scrollbar */
@@ -471,24 +416,18 @@ input[type=submit]{
 .task{
     width: 95%;
     height: 3em;
-    background-color: var(--whitish);
+    background-color: var(--mid-green);
     display: flex;
     text-align: center;
     margin: 10px;
     color: var(--primary-color);
-    border-bottom: var(--redish) solid;
-    transform: rotate(-2deg);
-    /* border-width: 3px 3px 5px 5px;
-  border-radius:4% 95% 6% 95%/95% 4% 92% 5%; */
-    
 }
 .task:hover{
-    border: var(--redish) solid;
+    border: #fff solid 1px;
 }
 .task_desc_short{
     width: 50%;
-    background-color:var(--whitish) ;
-    display: none;
+    background-color:var(--mid-green) ;
 }
 .task_desc_short h5{
     margin: 0;
@@ -510,19 +449,14 @@ h5{
   .task_status{
     width: 6em;
     height: 2em;
-    background-color: var(--redish);
+    background-color: var(--mid-green);
     color: var(--primary-color);
     padding: 10px;
     margin: 10px;
     text-align: center;
     /* left: 2rem; */
     position: relative;
-    border-width: 3px 4px 3px 5px;
-    border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-    transform: rotate(2deg);
-    border: solid;
-}  
-  
+  }
   .task_description{
     background-color: var(--accent-color);
     width: 25em;
@@ -530,11 +464,11 @@ h5{
     margin: 1em;
   }
   .footer{
-    left: 5em;
+    left: 1.5em;
     top: 14em;
     position: relative;
     background-color: var(--gray);
-    width: 70%;
+    width: 90%;
   }
   .footer a{
     background-color: var(--gray);
@@ -570,12 +504,6 @@ h5{
 
 .checkbox_Holder{
     width: 500px;
-    background-color: var(--whitish);
-
-}
-.checkbox_Holder label{
-    color: var(--redish);
-    
 }
 
 .weekTasks{
@@ -601,10 +529,11 @@ h5{
 }
 
 .checkboxes{
-    top: 5px;
-    left: 53px;
-    position: fixed;
+    right: 104px;
+    top: 13px;
+    position: relative;
 }
+
 .profile_container{
     display: inline-flex;
 }
@@ -620,75 +549,17 @@ h5{
 
 .pattern{
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
     background-color: var(--main-background);
-    opacity: 1;
-    background-image:  radial-gradient(#1e90ff 1.4500000000000002px, transparent 1.4500000000000002px), radial-gradient(#1e90ff 1.4500000000000002px, #e6eaf7 1.4500000000000002px);
-    background-size: 58px 58px;
-    background-position: 0 0,29px 29px;
+opacity: 1;
+background-image:  radial-gradient(#1e90ff 1.4500000000000002px, transparent 1.4500000000000002px), radial-gradient(#1e90ff 1.4500000000000002px, #e6eaf7 1.4500000000000002px);
+background-size: 58px 58px;
+background-position: 0 0,29px 29px;
 }
 
 .welcome{
     position: relative;
-    right: 220px;
+    right: 241px;
     top: 58px;
-}
-
-.delete_button{
-    left: 366px;
-    position: relative;
-    bottom: 19px;
-}
-
-.xbutton{
-    float: right;
-    cursor: pointer;
-    position: relative;
-    color: #001233;
-    left: -23px;
-    font-size: 30px;
-}
-.welcome_white{
-    color: black;
-    position: relative;
-    top: -8px;
-}
-.dark_mode{
-    position: relative;
-    bottom: 67px;
-}
-
-/* Change the checkbox color */
-input[type="checkbox"] {
-    border: 2px solid #000;
-    background-color: var(--whitish);
-}
-
-/* Change the appearance of the checked checkbox */
-input[type="checkbox"]:checked {
-    background-color: #ee5454; /* Change to your desired color */
-}
-
-.update_button{
-    left: 370px;
-    position: relative;
-    bottom: 19px;
-}
-.due_task{
-    position: relative;
-    left: 100px;
-}
-
-.task_id{
-    position: absolute;
-    top: 5px;
-    left: 130px;
-    color: black;
-}
-.task_d{
-    position: absolute;
-    top: 10px;
-    left: 220px;
-    color: black;
 }

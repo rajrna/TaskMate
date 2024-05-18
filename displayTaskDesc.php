@@ -14,7 +14,7 @@ $conn = mysqli_connect('localhost','root','','taskmate');
 // Fetch rows from the table
 $search_value = $current_user_id;
 
-$query = "SELECT * FROM todays_tasks WHERE task_id = '" . mysqli_real_escape_string($conn, $search_value) . "'";
+$query = "SELECT * FROM todays_tasks WHERE user_id='{$_SESSION['user_id']}' AND task_id = '" . mysqli_real_escape_string($conn, $search_value) . "'";
 $result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0) {
@@ -27,6 +27,9 @@ if (mysqli_num_rows($result) > 0) {
     }
 } else {
     echo 'No rows found.';
+    echo "SQL Query: $query<br>";
+echo "Session User ID: {$_SESSION['user_id']}<br>";
+echo "Search Value: $search_value<br>";
 }
 
 ?>
